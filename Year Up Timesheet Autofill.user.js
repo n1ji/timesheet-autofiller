@@ -44,7 +44,9 @@
         // tfa_2216 = Share feedback you have about your experience working with your internship supervisor.
         // tfa_2217 = Describe a skill that you have gained during your internship. Give specific examples of when you have used that skill.
         // tfa_2218 = What is one new tool (software, hardware or other technology) that you have learned to use on your internship? How and when do you use it?
-        document.getElementById('tfa_265').value = "tfa_2215";
+        const questionOptions = ['tfa_2214', 'tfa_2215', 'tfa_2216', 'tfa_2217', 'tfa_2218'];
+        const randomQuestion = questionOptions[Math.floor(Math.random() * questionOptions.length)];
+        document.getElementById('tfa_265').value = randomQuestion;
         document.getElementById('tfa_2232').value = "";
 
         // Auto checks no challenges
