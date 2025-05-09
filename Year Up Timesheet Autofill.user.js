@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Year Up Timesheet Autofill
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Automatically fills out the Year Up United Intern Timesheet and Status Report
 // @author       You
 // @match        https://yearup.tfaforms.net/*
@@ -14,12 +14,11 @@
     // Wait for the page to fully load
     window.addEventListener('load', function() {
         if (document.title.includes("Year Up United Intern Timesheet and Status Report")) {
-            setTimeout(fillForm, 500);
+            setTimeout(fillForm, 1000);
         }
     });
 
     function fillForm() {
-        //
         fillDay('Monday', '9:00', 'AM', '5:00', 'PM', '1 Hour');
         fillDay('Tuesday', '9:00', 'AM', '5:00', 'PM', '1 Hour');
         //fillDay('Wednesday', '9:00', 'AM', '5:00', 'PM', '1 Hour');
@@ -27,6 +26,7 @@
         fillDay('Friday', '9:00', 'AM', '5:00', 'PM', '1 Hour');
         //fillDay('Saturday', '9:00', 'AM', '5:00', 'PM', '1 Hour');
         //fillDay('Sunday', '9:00', 'AM', '5:00', 'PM', '1 Hour');
+        
         // ISEM Yes
         document.getElementById('tfa_147').checked = true;
 
